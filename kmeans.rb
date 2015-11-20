@@ -40,4 +40,7 @@ for i in 0..points.size-1
   out += names[i] + "\t" + points[i].cluster_id.to_s + "\n"
 end
 
-File.open("./data_out_kmeans/c2ds1-2sp.txt.out", 'w') { |file| file.write(out) }
+out_fn = ARGV[0].split(".")
+out_fn = out_fn[0..out_fn.size-2].join(".")
+
+File.open("./data_out_kmeans/#{out_fn}K_#{k}.out", 'w') { |file| file.write(out) }

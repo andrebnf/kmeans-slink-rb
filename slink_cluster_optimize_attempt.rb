@@ -3,8 +3,6 @@ require_relative 'lib/point'
 class SLinkCluster
 
   def self.get_min_distance points, i1, i2
-    p1 = []
-    p2 = []
     min_dist = -1
     for i in 0..points.size-1
       if points[i].cluster_id == i1
@@ -16,17 +14,7 @@ class SLinkCluster
         end
       end
     end
-    # p p1.size
-    # p p2.size
-    #
-    #
-    # min_dist = Point.calc_distance p1[0], p2[0]
-    # for i in 0..p1.size - 1
-    #   for j in 0..p2.size - 1
-    #     dist = Point.calc_distance p1[i], p2[j]
-    #     min_dist = [dist, min_dist].min
-    #   end
-    # end
+
     min_dist
   end
 

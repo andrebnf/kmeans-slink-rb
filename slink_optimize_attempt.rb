@@ -36,6 +36,7 @@ while ki != k
   c1 = c2 = -1
 
   for i in 0..(ki-1)
+      p i
     for j in i+1..(ki-1)
       dist = SLinkCluster.get_min_distance points, i, j
       if min_dist == -1 || dist < min_dist
@@ -47,7 +48,6 @@ while ki != k
 
   SLinkCluster.merge points, c1, c2
   ki -= 1
-
   # points.each do |p|
   #   p p.cluster_id
   # end

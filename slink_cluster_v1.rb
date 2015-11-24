@@ -1,9 +1,10 @@
 require_relative 'lib/point'
 
 class SLinkCluster
-  attr_accessor :points
+  attr_accessor :points, :points_ids
   def initialize
     @points = []
+    @points_ids = []
   end
 
   def self.init points
@@ -31,10 +32,12 @@ class SLinkCluster
   end
 
   def self.merge clusters, i1, i2
-    clusters[i1].points.each do |p|
-      clusters[i2].points << p
+    clusters[i2].points.each do |p|
+      clusters[i1].points << p
+      p.cluster_id = i1
     end
-    clusters.delete_at i1
+
+    clusters.delete_at i2
     return clusters
   end
 

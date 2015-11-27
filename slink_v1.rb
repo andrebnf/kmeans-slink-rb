@@ -47,6 +47,7 @@ while clusters.size != k
 
 
   clusters = SLinkCluster.merge clusters, c1, c2
+  p clusters.size
 
   if clusters.size <= k2 && clusters.size >= k
 
